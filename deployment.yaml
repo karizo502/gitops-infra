@@ -1,4 +1,3 @@
-# k8s deployment nginx
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -13,17 +12,16 @@ spec:
       labels:
         app: react-app
     spec:
-      # k8s pod nginx
       containers:
       - name: react-app
-        image: react-appkarizo502/reactapp-ci:1.0
+        image: iamsamitdev/reactapp-ci:1.0
         imagePullPolicy: Always
-        parts:
+        ports:
         - containerPort: 80
         resources:
-          limits:
-            cpu: "500m"
-            memory: "128Mi"
           requests:
-            cpu: "250m"
             memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
