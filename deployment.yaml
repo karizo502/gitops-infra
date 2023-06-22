@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: react-app
-        image: karizo502/reactapp-ci:1.0
+        image: karizo502/reactapp-ci:7eb5fe20148e6a16787cfb4831840d615467e879
         imagePullPolicy: Always
         ports:
         - containerPort: 80
